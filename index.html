@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/anime.js"></script>
     <title>AnimeRequester</title>
 </head>
 <body>
     <h1>Json's AnimeRequester</h1>
-    <input type="search" id="search" placeholder="Rechercher..." />
-    <button>Rechercher</button>
-    <button>effacer</button>
+    <form>
+        <input type="search" id="search" placeholder="Rechercher..." />
+        <input type="submit" id="rechercher" value="rechercher">
+        <input type="reset" id="effacer" value="effacer">
+    </form>
     <template id="template_anime_card">
         <h1 id="anime_title_label"></h1>
         <img id="image_anime" alt="image indisponible">
