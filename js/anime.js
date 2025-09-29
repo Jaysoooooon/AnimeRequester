@@ -1,14 +1,12 @@
-let rechercher = document.getElementById('rechercher')
+let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
-let search = document.getElementById('search')
-
-
+let rechercher = document.getElementById('rechercher')
 
 
 /* code pour effacer la recherche */
 
 effacer.addEventListener('click', ()=>{
-    search.reset();
+    
     HTMLFormElement.reset();
 })
 
