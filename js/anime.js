@@ -1,3 +1,5 @@
+let key = prompt("Déposer votre clé d'API ici pour faire des recherches");
+
 function générez_résultat(){
     if ("content" in document.createElement("template")) {
         let template=document.getElementById("template_anime_card")
@@ -35,5 +37,21 @@ let rechercher = document.getElementById('rechercher')
 /* code pour effacer la recherche */
 
 effacer.addEventListener('click', ()=>{
-    HTMLFormElement.reset();
+    location.reload();
 })
+
+/* fetch API */
+
+const data = fetch('https://anime-db.p.rapidapi.com/')
+    .then(response => {
+        if(!response.ok) {
+            throw new Error('La Response du réseau n est pas ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Il y a un problème avec l opération fetch', error);
+    });
