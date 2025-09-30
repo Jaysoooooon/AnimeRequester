@@ -1,29 +1,36 @@
 let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
-let caseChoisie = document.querySelectorAll('input[name = "checkbox"]')
+let choix = document.getElementById('choix')
 let test = document.getElementById('test')
+let critereChoisie
 
 /* fonction */
+function selectionnerCritere(){
+    
 
-function recupererCaseCoche(){
-    let choix = "";
-    for(let i = 0; i< caseChoisie.length; i++){
-        if(caseChoisie[i].checked){
-            console.log("bonjour")
-            return caseChoisie[i]
-        }
+    switch(choix.value){
+        case "ID":
+            return "id";
+        case "Nom de l'anime":
+            return "nom";
+        case "Genre":
+            return "genre";
+        case "Rang":
+            return "rang";
+        default:
+            return null;
     }
+
 }
 
-
-
-
-
 /* fonction */
 
-
-
+choix.addEventListener("change", ()=>{
+    critereChoisie =selectionnerCritere();
+     
+})
+    test.textContent = selectionnerCritere();
 
 
 if ("content" in document.createElement("template")) {
