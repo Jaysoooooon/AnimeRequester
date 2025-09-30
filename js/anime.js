@@ -1,11 +1,8 @@
 let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
-let action = document.getElementById('action')
-let aventure = document.getElementById('action')
-let comedy = document.getElementById('action')
-let romance = document.getElementById('action')
 let caseChoisie = document.querySelectorAll('input[name = "checkbox"]')
+let test = document.getElementById('test')
 
 /* fonction */
 
@@ -13,6 +10,7 @@ function recupererCaseCoche(){
     let choix = "";
     for(let i = 0; i< caseChoisie.length; i++){
         if(caseChoisie[i].checked){
+            console.log("bonjour")
             return caseChoisie[i]
         }
     }
@@ -42,6 +40,8 @@ if ("content" in document.createElement("template")) {
     synopsis.textContent="syn2"
     
 }
+
+    test.textContent = effacer.getAttribute("")   
 
 
 
