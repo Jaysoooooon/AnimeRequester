@@ -1,6 +1,33 @@
 let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
+let action = document.getElementById('action')
+let aventure = document.getElementById('action')
+let comedy = document.getElementById('action')
+let romance = document.getElementById('action')
+let caseChoisie = document.querySelectorAll('input[name = "checkbox"]')
+
+/* fonction */
+
+function recupererCaseCoche(){
+    let choix = "";
+    for(let i = 0; i< caseChoisie.length; i++){
+        if(caseChoisie[i].checked){
+            return caseChoisie[i]
+        }
+    }
+}
+
+
+
+
+
+/* fonction */
+
+
+
+
+
 if ("content" in document.createElement("template")) {
     let template=document.getElementById("template_anime_card")
     let all=document.getElementById("all")
@@ -22,5 +49,7 @@ if ("content" in document.createElement("template")) {
 
 effacer.addEventListener('click', ()=>{
     
-    HTMLFormElement.reset();
+    location.reload()
 })
+
+recupererCaseCoche();
