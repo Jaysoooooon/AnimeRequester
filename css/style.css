@@ -12,3 +12,18 @@
   margin: 2%;
   border-radius: 20px;
 }
+
+footer#footer{
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  display: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 10em;
+}
+
+.footer_elements{
+  position: relative;
+  top: 3em;
+}
