@@ -1,8 +1,8 @@
-function générez_résultat(){
+function générez_résultat(nb_res){
     if ("content" in document.createElement("template")) {
         let template=document.getElementById("template_anime_card")
         let all=document.getElementById("all")
-        for(let i = 0; i<10; i++){
+        for(let i = 0; i<nb_res; i++){
             let clone = document.importNode(template.content, true);
             all.appendChild(clone);
             let synopsis=document.getElementById("synopsis")
@@ -22,11 +22,10 @@ function générez_résultat(){
 
 
 
-
         }   
     }
 }
-générez_résultat()
+générez_résultat(10)
 
 let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
