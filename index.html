@@ -10,29 +10,29 @@
 <body>
 
     <div class="container" id="all">
-         <h1>Json's AnimeRequester</h1>
-    <form>
-        <select name="choix" id="choix">
-            <option> Critère de sélection </option>
-            <option> Nom de l'anime </option>
-            <option> ID </option>
-            <option> Genre </option>
-            <option> Rang </option>
-        </select>
-        <input type="search" id="rechercher" placeholder="Rechercher..." />
-        <input type="submit" id="envoyer" value="Rechercher">
-        <input type="reset" id="effacer" value="effacer">
-        
-    </form>
-    <template id="template_anime_card">
-        <h1 id="anime_title_label"></h1>
-        <img id="image_anime" alt="image indisponible">
-        <h2>Synopsis :</h2>
-        <p id="synopsis"></p>
-        <table id="catégories"></table>
-        <label id="classement"></label>
-        <label id="nb_episodes"></label>
-
+        <h1>Json's AnimeRequester</h1>
+        <form>
+            <select name="choix" id="choix">
+                <option> Critère de sélection </option>
+                <option> Nom de l'anime </option>
+                <option> ID </option>
+                <option> Genre </option>
+                <option> Rang </option>
+            </select>
+            <input type="search" id="rechercher" placeholder="Rechercher..." />
+            <input type="submit" id="envoyer" value="Rechercher">
+            <input type="reset" id="effacer" value="effacer">
+        </form>
+        <template id="template_anime_card">
+            <div class="carte">
+                <h1 id="anime_title"></h1>
+                <img id="image_anime" src="" alt="image indisponible">
+                <h2>Synopsis :</h2>
+                <p id="synopsis"></p>
+                <table id="catégories"></table>
+                <label id="classement"></label>
+                <label id="nb_episodes"></label>
+            </div>
         </template>
     </div>
     <footer id="footer">
