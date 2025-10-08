@@ -5,6 +5,9 @@
   justify-content: center;
   text-align: center;
 }
+:root {
+  color-scheme: light dark;
+}
 
 .carte{
   background-color: grey;
@@ -26,4 +29,8 @@ footer#footer{
 .footer_elements{
   position: relative;
   top: 3em;
+}
+
+#changement_mode{
+  
 }
