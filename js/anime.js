@@ -1,6 +1,10 @@
-let key = prompt("Déposer votre clé d'API ici pour faire des recherches");
+let key = '';
 
-function générez_résultat(){
+while(key == '') {
+    key = prompt("Déposer votre clé d'API ici pour faire des recherches");
+}
+
+function générez_résultat(nb_res){
     if ("content" in document.createElement("template")) {
         let template=document.getElementById("template_anime_card")
         let all=document.getElementById("all")
@@ -21,9 +25,6 @@ function générez_résultat(){
             classement.id=classement.id+"_"+i;
             let nb_episodes=document.getElementById("nb_episodes");
             classement.id=classement.id+"_"+i;
-
-
-
         }   
     }
 }
@@ -43,10 +44,10 @@ effacer.addEventListener('click', ()=>{
 
 /* fetch API */
 function getChoice() {
-    const choice = '';
+    let choice = '';
     switch(choix.value) {
         case 'Genre':
-            choice = 'genre';
+            choice = 'anime?page=1&size=10&genre=';
             return choice;
         case 'ID':
             choice = 'anime/by-id/';
@@ -62,9 +63,16 @@ function getChoice() {
     }
 }
 
+function getSearchElement() {
+    return rechercher.value;
+}
 
 function search() {
-    const data = fetch('https://anime-db.p.rapidapi.com/' + getChoice())
+    const data = fetch('https://anime-db.p.rapidapi.com/' + getChoice() + getSearchElement(), {
+        headers: {
+            'x-rapidapi-key': key
+        }
+    })
     .then(response => {
         if(!response.ok) {
             throw new Error('La Response du réseau n est pas ok');
@@ -76,5 +84,11 @@ function search() {
     })
     .catch(error => {
         console.error('Il y a un problème avec l opération fetch', error);
+        alert("Une erreure est survenue, vérifier la clé !");
+        key = prompt("Déposer votre clé d'API ici pour faire des recherches");
     });
 }
+
+envoyer.addEventListener('click', () => {
+    search();
+})
