@@ -45,16 +45,16 @@ effacer.addEventListener('click', ()=>{
 const choice = '';
 switch(untruc) {
     case 'Genre':
-        choice = 'genre/';
+        choice = 'genre';
     case 'ID':
         choice = 'anime/by-id/';
     case 'Nom':
         choice = 'search=';
     case 'Rank':
-        choice = '/anime/by-ranking/'
+        choice = 'anime/by-ranking/'
 }
 
-const data = fetch('https://anime-db.p.rapidapi.com/' + choice +'?page=1&size=10&')
+const data = fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=10&' + choice)
     .then(response => {
         if(!response.ok) {
             throw new Error('La Response du réseau n est pas ok');
