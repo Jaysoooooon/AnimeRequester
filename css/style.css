@@ -5,6 +5,9 @@
   justify-content: center;
   text-align: center;
 }
+:root {
+  color-scheme: light dark;
+}
 
 .carte{
   background-color: grey;

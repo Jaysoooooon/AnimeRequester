@@ -32,6 +32,8 @@ let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
 let mode = document.getElementById('changement_mode')
 let estModeSombre = false;
+let titre = document.getElementById("titre")
+let arriere_plan = document.body
 
 let choix = document.getElementById('choix')
 let critereChoisie
@@ -55,7 +57,30 @@ function selectionnerCritere(){
 
 }
 
+function changerCouleurSombre(){
+   
+    
+    document.documentElement.style.colorScheme = 'dark'
+}
+
+function changerCouleurClaire(){
+   
+    document.documentElement.style.colorScheme = 'light'
+}
 /* fonction */
+
+
+
+function isDarkMode (){
+
+	globalThis.matchMedia?.("(prefers-color-scheme:dark)").matches ?? false;
+}
+// Usage
+ estModeSombre =isDarkMode();
+
+
+
+
 
 choix.addEventListener("change", ()=>{
     critereChoisie =selectionnerCritere();
@@ -63,14 +88,20 @@ choix.addEventListener("change", ()=>{
 })
 
 mode.addEventListener('click', ()=>{
-    
+   
+
+
     if(estModeSombre == false){
         mode.setAttribute("value", "mode clair")
         estModeSombre = true
+        sessionStorage.setItem("autosave",estModeSombre)
+        changerCouleurSombre()
     }
     else{
         mode.setAttribute("value", "mode sombre")
         estModeSombre = false
+        sessionStorage.setItem("autosave",estModeSombre)
+        changerCouleurClaire()
     }
 })
 
