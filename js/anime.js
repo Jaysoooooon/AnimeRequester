@@ -30,6 +30,8 @@ générez_résultat(10)
 let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
+let mode = document.getElementById('changement_mode')
+let estModeSombre = false;
 
 let choix = document.getElementById('choix')
 let critereChoisie
@@ -60,6 +62,17 @@ choix.addEventListener("change", ()=>{
      
 })
 
+mode.addEventListener('click', ()=>{
+    
+    if(estModeSombre == false){
+        mode.setAttribute("value", "mode clair")
+        estModeSombre = true
+    }
+    else{
+        mode.setAttribute("value", "mode sombre")
+        estModeSombre = false
+    }
+})
 
 
 /* code pour effacer la recherche */
