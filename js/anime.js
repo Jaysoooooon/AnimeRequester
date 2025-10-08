@@ -34,35 +34,6 @@ let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
 
 let choix = document.getElementById('choix')
-let critereChoisie
-
-/* fonction */
-function selectionnerCritere(){
-    
-
-    switch(choix.value){
-        case "ID":
-            return "id";
-        case "Nom de l'anime":
-            return "nom";
-        case "Genre":
-            return "genre";
-        case "Rang":
-            return "rang";
-        default:
-            return null;
-    }
-
-}
-
-/* fonction */
-
-choix.addEventListener("change", ()=>{
-    critereChoisie =selectionnerCritere();
-     
-})
-
-
 
 /* code pour effacer la recherche */
 
@@ -71,20 +42,29 @@ effacer.addEventListener('click', ()=>{
 })
 
 /* fetch API */
-
-const choice = '';
-switch(untruc) {
-    case 'Genre':
-        choice = 'genre';
-    case 'ID':
-        choice = 'anime/by-id/';
-    case 'Nom':
-        choice = 'search=';
-    case 'Rank':
-        choice = 'anime/by-ranking/'
+function getChoice() {
+    const choice = '';
+    switch(choix.value) {
+        case 'Genre':
+            choice = 'genre';
+            return choice;
+        case 'ID':
+            choice = 'anime/by-id/';
+            return choice;
+        case 'Nom':
+            choice = 'anime?page=1&size=10&search=';
+            return choice;
+        case 'Rang':
+            choice = 'anime/by-ranking/'
+            return choice;
+        default:
+            return null;
+    }
 }
 
-const data = fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=10&' + choice)
+
+function search() {
+    const data = fetch('https://anime-db.p.rapidapi.com/' + getChoice())
     .then(response => {
         if(!response.ok) {
             throw new Error('La Response du réseau n est pas ok');
@@ -97,3 +77,4 @@ const data = fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=10&' + cho
     .catch(error => {
         console.error('Il y a un problème avec l opération fetch', error);
     });
+}
