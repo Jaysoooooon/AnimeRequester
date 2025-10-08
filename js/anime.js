@@ -52,7 +52,7 @@ function getChoice() {
         case 'ID':
             choice = 'anime/by-id/';
             return choice;
-        case 'Nom':
+        case 'Nom de l\'anime':
             choice = 'anime?page=1&size=10&search=';
             return choice;
         case 'Rang':
