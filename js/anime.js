@@ -65,6 +65,7 @@ function changerCouleurSombre(){
    
     
     document.documentElement.style.colorScheme = 'dark'
+ 
 }
 
 function changerCouleurClaire(){

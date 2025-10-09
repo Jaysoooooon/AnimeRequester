@@ -82,9 +82,7 @@ header{
   background: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
 }
 
-option{
-  background: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
-}
+
 
 #rechercher{
   padding: 1%;
@@ -99,6 +97,14 @@ option{
   margin-top: 50px;
   width: 100%;
   height: 20%;
+}
+
+option{
+  background-color: rgb(25, 180, 228) ;
+}
+
+option:hover{
+  background-color: rgb(18, 136, 172) ;
 }
 
 #changement_mode{
