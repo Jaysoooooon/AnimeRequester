@@ -24,11 +24,10 @@ function générez_résultat(nb_res){
             let classement=document.getElementById("classement");
             classement.id=classement.id+"_"+i;
             let nb_episodes=document.getElementById("nb_episodes");
-            classement.id=classement.id+"_"+i;
+            nb_episodes.id=nb_episodes.id+"_"+i;
         }   
     }
 }
-générez_résultat(10)
 
 let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
@@ -156,6 +155,7 @@ function search() {
     })
     .then(data => {
         console.log(data);
+        jsonStep(data);
     })
     .catch(error => {
         console.error('Il y a un problème avec l opération fetch', error);
@@ -166,4 +166,18 @@ function search() {
 
 envoyer.addEventListener('click', () => {
     search();
-})
+});
+
+function jsonStep(data) {
+    let i = 0;
+    générez_résultat(data.data.length);
+    data.data.forEach(element => {
+        document.getElementById("anime_title_" + i).textContent = element.title;
+        document.getElementById("synopsis_" + i).textContent = element.synopsis;
+        document.getElementById("image_anime_" + i).src = element.image;
+        document.getElementById("catégories_" + i).textContent = element.genres;
+        document.getElementById("classement_" + i).textContent = element.ranking;
+        document.getElementById("nb_episodes_" + i).textContent = element.episodes;
+        i++;
+    });
+}
