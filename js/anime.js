@@ -170,14 +170,24 @@ envoyer.addEventListener('click', () => {
 
 function jsonStep(data) {
     let i = 0;
-    générez_résultat(data.data.length);
-    data.data.forEach(element => {
-        document.getElementById("anime_title_" + i).textContent = element.title;
-        document.getElementById("synopsis_" + i).textContent = element.synopsis;
-        document.getElementById("image_anime_" + i).src = element.image;
-        document.getElementById("catégories_" + i).textContent = element.genres;
-        document.getElementById("classement_" + i).textContent = element.ranking;
-        document.getElementById("nb_episodes_" + i).textContent = element.episodes;
-        i++;
-    });
+    if(choix.value == "ID" || choix.value == "Rang") {
+        générez_résultat(1);
+        document.getElementById("anime_title_" + i).textContent = data.title;
+        document.getElementById("synopsis_" + i).textContent = data.synopsis;
+        document.getElementById("image_anime_" + i).src = data.image;
+        document.getElementById("catégories_" + i).textContent = data.genres;
+        document.getElementById("classement_" + i).textContent = data.ranking;
+        document.getElementById("nb_episodes_" + i).textContent = data.episodes;
+    } else {
+        générez_résultat(data.data.length);
+        data.data.forEach(element => {
+            document.getElementById("anime_title_" + i).textContent = element.title;
+            document.getElementById("synopsis_" + i).textContent = element.synopsis;
+            document.getElementById("image_anime_" + i).src = element.image;
+            document.getElementById("catégories_" + i).textContent = element.genres;
+            document.getElementById("classement_" + i).textContent = element.ranking;
+            document.getElementById("nb_episodes_" + i).textContent = element.episodes;
+            i++;
+        });
+    }   
 }
