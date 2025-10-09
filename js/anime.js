@@ -41,6 +41,8 @@ let choix = document.getElementById('choix')
 
 let critereChoisie
 
+let nb_res = 0;
+
 /* fonction */
 function selectionnerCritere(){
     
@@ -165,12 +167,21 @@ function search() {
 }
 
 envoyer.addEventListener('click', () => {
+    if(nb_res>1){
+        let all=document.getElementById("all")
+
+        for(let i = 0; i<nb_res;i++){
+            all.removeChild(i);
+        }
+    }
     search();
 });
 
 function jsonStep(data) {
     let i = 0;
+    
     if(choix.value == "ID" || choix.value == "Rang") {
+        nb_res=1
         générez_résultat(1);
         document.getElementById("anime_title_" + i).textContent = data.title;
         document.getElementById("synopsis_" + i).textContent = data.synopsis;
@@ -179,6 +190,7 @@ function jsonStep(data) {
         document.getElementById("classement_" + i).textContent = data.ranking;
         document.getElementById("nb_episodes_" + i).textContent = data.episodes;
     } else {
+        nb_res=data.data.length
         générez_résultat(data.data.length);
         data.data.forEach(element => {
             document.getElementById("anime_title_" + i).textContent = element.title;
