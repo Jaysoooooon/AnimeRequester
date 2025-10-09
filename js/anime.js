@@ -70,6 +70,7 @@ function changerCouleurSombre(){
 function changerCouleurClaire(){
    
     document.documentElement.style.colorScheme = 'light'
+    
 }
 /* fonction */
 
@@ -96,13 +97,13 @@ mode.addEventListener('click', ()=>{
 
 
     if(estModeSombre == false){
-        mode.setAttribute("value", "mode clair")
+        mode.setAttribute("value", "◐")
         estModeSombre = true
         sessionStorage.setItem("autosave",estModeSombre)
         changerCouleurSombre()
     }
     else{
-        mode.setAttribute("value", "mode sombre")
+        mode.setAttribute("value", "◐")
         estModeSombre = false
         sessionStorage.setItem("autosave",estModeSombre)
         changerCouleurClaire()
