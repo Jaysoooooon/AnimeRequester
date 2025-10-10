@@ -175,13 +175,6 @@ function search() {
 }
 
 envoyer.addEventListener('click', () => {
-    if(nb_res>1){
-        let all=document.getElementById("all")
-
-        for(let i = 0; i<nb_res;i++){
-            all.removeChild(i);
-        }
-    }
     search();
 });
 
