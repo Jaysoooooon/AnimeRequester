@@ -5,18 +5,26 @@ while(key == '') {
 }
 
 function générez_résultat(nb_res){
+    let div_card = document.getElementById("card-div")
+    while(div_card.hasChildNodes()){
+        div_card.removeChild(div_card.firstChild)
+    }
+
     if ("content" in document.createElement("template")) {
         let template=document.getElementById("template_anime_card")
-        let all=document.getElementById("all")
+        let div_card=document.getElementById("card-div")
         for(let i = 0; i<nb_res; i++){
             let clone = document.importNode(template.content, true);
-            all.appendChild(clone);
+            div_card.appendChild(clone);
             let synopsis=document.getElementById("synopsis")
             synopsis.textContent="syn"+i
             synopsis.id=synopsis.id+"_"+i
             let anime_title=document.getElementById("anime_title");
             anime_title.textContent="title"+i
             anime_title.id=anime_title.id+"_"+i
+            let alias=document.getElementById("alias");
+            alias.textContent="alias"+i
+            alias.id=alias.id+"_"+i
             let image_anime=document.getElementById("image_anime");
             image_anime.id=image_anime.id+"_"+i;
             let catégories=document.getElementById("catégories");
@@ -98,6 +106,7 @@ function jsonStep(data) {
     générez_résultat(data.data.length);
     data.data.forEach(element => {
         document.getElementById("anime_title_" + i).textContent = element.title;
+        document.getElementById("alias_" + i).textContent = element.alternativeTitles;
         document.getElementById("synopsis_" + i).textContent = element.synopsis;
         document.getElementById("image_anime_" + i).src = element.image;
         document.getElementById("catégories_" + i).textContent = element.genres;
