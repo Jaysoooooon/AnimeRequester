@@ -33,6 +33,10 @@ function générez_résultat(nb_res){
             classement.id=classement.id+"_"+i;
             let nb_episodes=document.getElementById("nb_episodes");
             nb_episodes.id=nb_episodes.id+"_"+i;
+            let classement_label=document.getElementById("classement_label");
+            classement_label.id=classement_label.id+"_"+i;
+            let nb_episodes_label=document.getElementById("nb_episodes_label");
+            nb_episodes_label.id=nb_episodes_label.id+"_"+i;
         }   
     }
 }
@@ -189,8 +193,19 @@ function jsonStep(data) {
         document.getElementById("synopsis_" + i).textContent = data.synopsis;
         document.getElementById("image_anime_" + i).src = data.image;
         document.getElementById("catégories_" + i).textContent = data.genres;
-        document.getElementById("classement_" + i).textContent = data.ranking;
-        document.getElementById("nb_episodes_" + i).textContent = data.episodes;
+        console.log(data.hasEpisode)
+        if(data.hasEpisode==true){
+            document.getElementById("nb_episodes_" + i).textContent = data.episodes;
+        } else {
+            document.getElementById("nb_episodes_" + i).remove()
+            document.getElementById("nb_episodes_label_" + i).remove()
+        }
+        if(data.hasRanking==true){
+            document.getElementById("classement_" + i).textContent = data.ranking;
+        } else {
+            document.getElementById("classement_" + i).remove()
+            document.getElementById("classement_label_" + i).remove()
+        }
     } else {
         nb_res=data.data.length
         générez_résultat(data.data.length);
@@ -200,8 +215,18 @@ function jsonStep(data) {
             document.getElementById("synopsis_" + i).textContent = element.synopsis;
             document.getElementById("image_anime_" + i).src = element.image;
             document.getElementById("catégories_" + i).textContent = element.genres;
-            document.getElementById("classement_" + i).textContent = element.ranking;
-            document.getElementById("nb_episodes_" + i).textContent = element.episodes;
+            if(element.hasEpisode=true){
+                document.getElementById("nb_episodes_" + i).textContent = element.episodes;
+            } else {
+                document.getElementById("nb_episodes_" + i).remove()
+                document.getElementById("nb_episodes_label_" + i).remove()
+            }
+            if(element.hasRanking=true){
+                document.getElementById("classement_" + i).textContent = element.ranking;
+            } else {
+                document.getElementById("classement_" + i).remove()
+                document.getElementById("classement_label_" + i).remove()
+            }
             i++;
         });
     }
