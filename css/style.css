@@ -1,3 +1,8 @@
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(17, 96, 120) rgb(25, 180, 228);
+}
+
 .container{
   display: flex;
   flex-direction: column;
@@ -125,4 +130,35 @@ option:hover{
 
 .bouton{
   cursor: pointer;
+}
+
+.genre{
+  display:inline-block;
+  max-width: 200px;
+  max-height: 100px;
+  overflow-y: auto;
+  position: absolute;
+  border-radius: 8px;
+  
+}
+
+#genre-deroulant {
+  height: 100%;
+  
+  
+}
+
+.genre-element{
+  display: flex;
+  width: 100%;
+  background-color: rgb(25, 180, 228) ;
+  border: 0px
+  
+
+}
+
+.genre-element:hover{
+  display: flex;
+  background-color: rgb(18, 136, 172) ;
+
 }

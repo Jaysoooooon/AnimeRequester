@@ -40,16 +40,20 @@ function générez_résultat(nb_res){
 let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
+let rechercher_genre = document.getElementById('rechercher-genre')
 let mode = document.getElementById('changement_mode')
 let estModeSombre = false;
+rechercher_genre.style.display='none'
 let titre = document.getElementById("titre")
 let arriere_plan = document.body
-
 let choix = document.getElementById('choix')
-
 let critereChoisie
-
 let nb_res = 0;
+
+
+/* gestion du choix du genre */
+
+
 
 /* fonction */
 function selectionnerCritere(){
@@ -82,9 +86,6 @@ function changerCouleurClaire(){
     document.documentElement.style.colorScheme = 'light'
     
 }
-/* fonction */
-
-
 
 function isDarkMode (){
 
@@ -96,6 +97,14 @@ function isDarkMode (){
 
 choix.addEventListener("change", ()=>{
     critereChoisie =selectionnerCritere();
+    if(critereChoisie!='genre'){
+        rechercher_genre.style.display='none'
+        rechercher.style.display='inline'
+    } else {
+        rechercher_genre.style.display='inline'
+        rechercher.style.display='none'
+
+    }
      
 })
 
@@ -180,6 +189,8 @@ form.addEventListener('submit', (event) => {
 function jsonStep(data) {
     let i = 0;
     
+    let string_genre = "";
+
     if(choix.value == "ID" || choix.value == "Rang") {
         nb_res=1
         générez_résultat(1);
@@ -187,7 +198,12 @@ function jsonStep(data) {
         document.getElementById("alias_" + i).textContent = data.alternativeTitles;
         document.getElementById("synopsis_" + i).textContent = data.synopsis;
         document.getElementById("image_anime_" + i).src = data.image;
-        document.getElementById("catégories_" + i).textContent = data.genres;
+        if(element.genres.length>0){
+            string_genre+=element.genres[0]
+            for(let j = 1; j<element.genres.length; j++){
+                string_genre+=", "+element.genres[j]
+            }
+        }
         console.log(data.hasEpisode)
         if(data.hasEpisode==true){
             document.getElementById("nb_episodes_" + i).textContent = data.episodes;
@@ -205,11 +221,18 @@ function jsonStep(data) {
         nb_res=data.data.length
         générez_résultat(data.data.length);
         data.data.forEach(element => {
+            string_genre = ""
             document.getElementById("anime_title_" + i).textContent = element.title;
             document.getElementById("alias_" + i).textContent = element.alternativeTitles;
             document.getElementById("synopsis_" + i).textContent = element.synopsis;
             document.getElementById("image_anime_" + i).src = element.image;
-            document.getElementById("catégories_" + i).textContent = element.genres;
+            if(element.genres.length>0){
+                string_genre+=element.genres[0]
+                for(let j = 1; j<element.genres.length; j++){
+                    string_genre+=" "+element.genres[j]
+                }
+            }
+            document.getElementById("catégories_" + i).textContent = string_genre;
             if(element.hasEpisode=true){
                 document.getElementById("nb_episodes_" + i).textContent = element.episodes;
             } else {
