@@ -1,7 +1,5 @@
 let key = '';
 
-
-
 function générez_résultat(nb_res){
     let div_card = document.getElementById("card-div")
     while(div_card.hasChildNodes()){
@@ -90,13 +88,10 @@ function changerCouleurClaire(){
 
 function isDarkMode (){
 
-	globalThis.matchMedia?.("(prefers-color-scheme:dark)").matches ?? false;
+	return globalThis.matchMedia?.("(prefers-color-scheme:dark)").matches ?? false;
 }
 // Usage
  estModeSombre =isDarkMode();
-
-
-
 
 
 choix.addEventListener("change", ()=>{
@@ -105,9 +100,6 @@ choix.addEventListener("change", ()=>{
 })
 
 mode.addEventListener('click', ()=>{
-   
-
-
     if(estModeSombre == false){
         mode.setAttribute("value", "◐")
         estModeSombre = true
