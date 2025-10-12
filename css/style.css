@@ -94,9 +94,12 @@ header{
 }
 
 #form{
-  margin-top: 50px;
   width: 100%;
   height: 20%;
+}
+
+#api-label{
+  margin: 20px;
 }
 
 option{
@@ -118,4 +121,8 @@ option:hover{
 }
 #changement_mode:hover{
   background-image: linear-gradient(rgb(11, 90, 114), rgb(14, 72, 138))
+}
+
+.bouton{
+  cursor: pointer;
 }

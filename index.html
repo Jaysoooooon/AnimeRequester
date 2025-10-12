@@ -9,14 +9,13 @@
 </head>
 <body>
     <header>
-        <input id="changement_mode"  type="button" value="◐">
+        <input class="bouton" id="changement_mode"  type="button" value="◐">
         <h1 id="titre">㊐ ◈ (★) Json's AnimeRequester (★) ◈ ㊑ </h1>
-            </header>
+    </header>
     <div class="container" id="all">        
-        <h1 id="titre">Json's AnimeRequester</h1>
-        <label>Déposer votre clé d'API ici pour faire des recherches : <input class="champs-de-texte" type="text" id="api-key" required></label>
+        <label id="api-label">Déposer votre clé d'API ici pour faire des recherches : <input class="champs-de-texte" type="text" id="api-key" required></label>
         <form id="form">
-            <select name="choix" id="choix" required>
+            <select class="bouton" name="choix" id="choix" required>
                 <option value=""> Critère de sélection </option>
                 <option value="Nom de l'anime"> Nom de l'anime </option>
                 <option value="ID"> ID </option>
@@ -24,8 +23,8 @@
                 <option value="Rang"> Rang </option>
             </select>
             <input class="champs-de-texte" type="search" id="rechercher" placeholder="Rechercher..." />
-            <input type="submit" id="envoyer" value="Rechercher">
-            <input type="reset" id="effacer" value="effacer">
+            <input class="bouton" type="submit" id="envoyer" value="Rechercher">
+            <input class="bouton" type="reset" id="effacer" value="Effacer">
         </form>
         <div class="container" id="card-div">
 
