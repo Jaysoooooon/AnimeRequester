@@ -1,8 +1,6 @@
 let key = '';
 
-while(key == '') {
-    key = prompt("Déposer votre clé d'API ici pour faire des recherches");
-}
+
 
 function générez_résultat(nb_res){
     let div_card = document.getElementById("card-div")
@@ -135,7 +133,7 @@ function getChoice() {
     let choice = '';
     switch(choix.value) {
         case 'Genre':
-            choice = 'anime?page=1&size=10&genre=';
+            choice = 'anime?page=1&size=10&genres=';
             return choice;
         case 'ID':
             choice = 'anime/by-id/';
@@ -156,6 +154,7 @@ function getSearchElement() {
 }
 
 function search() {
+    key=document.getElementById("api-key").value
     const data = fetch('https://anime-db.p.rapidapi.com/' + getChoice() + getSearchElement(), {
         headers: {
             'x-rapidapi-key': key
@@ -174,7 +173,6 @@ function search() {
     .catch(error => {
         console.error('Il y a un problème avec l opération fetch', error);
         alert("Une erreure est survenue, vérifier la clé !");
-        key = prompt("Déposer votre clé d'API ici pour faire des recherches");
     });
 }
 
