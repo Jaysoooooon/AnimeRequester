@@ -12,22 +12,22 @@
     <div class="container" id="all">
 
         
-        <div>
+        
 
         <input id="changement_mode"  type="button" value="mode sombre">
         <h1 id="titre">Json's AnimeRequester</h1>
-       
-            <select name="choix" id="choix">
-                <option> Critère de sélection </option>
-                <option> Nom de l'anime </option>
-                <option> ID </option>
-                <option> Genre </option>
-                <option> Rang </option>
+        <form id="form">
+            <select name="choix" id="choix" required>
+                <option value=""> Critère de sélection </option>
+                <option value="Nom de l'anime"> Nom de l'anime </option>
+                <option value="ID"> ID </option>
+                <option value="Genre"> Genre </option>
+                <option value="Rang"> Rang </option>
             </select>
             <input type="search" id="rechercher" placeholder="Rechercher..." />
             <input type="submit" id="envoyer" value="Rechercher">
             <input type="reset" id="effacer" value="effacer">
-        </div>
+        </form>
         <div class="container" id="card-div">
 
         </div>

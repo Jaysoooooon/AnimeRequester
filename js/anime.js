@@ -178,7 +178,10 @@ function search() {
     });
 }
 
-envoyer.addEventListener('click', () => {
+const form = document.getElementById("form")
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
     search();
 });
 
