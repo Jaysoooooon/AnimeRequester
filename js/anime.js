@@ -49,10 +49,13 @@ let arriere_plan = document.body
 let choix = document.getElementById('choix')
 let critereChoisie
 let nb_res = 0;
+let genre=document.getElementById('genre')
 
 
 /* gestion du choix du genre */
-
+genre.addEventListener('submit', (event) => {
+    event.preventDefault();
+});
 
 
 /* fonction */
@@ -75,8 +78,6 @@ function selectionnerCritere(){
 }
 
 function changerCouleurSombre(){
-   
-    
     document.documentElement.style.colorScheme = 'dark'
  
 }
