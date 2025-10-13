@@ -205,6 +205,14 @@ select:active{
 
 }
 
+.champs-de-texte{
+  padding: 1%;
+  width: 20%;
+  margin-right: 1%;
+  border: 2px solid rgb(25, 180, 228);
+  border-radius: 20px;
+  font-size: 15px;
+}
 
 .inline{
   display: inline;
