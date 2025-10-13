@@ -9,21 +9,22 @@
 </head>
 <body>
     <header>
-        <input class="bouton" id="changement_mode"  type="button" value="◐">
+        <input role="button" class="bouton" id="changement_mode"  type="button" value="◐">
         <h1 id="titre">㊐ ◈ (★) Json's AnimeRequester (★) ◈ ㊑ </h1>
     </header>
     <main>
     <div class="container" id="all">        
         <label id="api-label">Déposer votre clé d'API ici pour faire des recherches : <input class="champs-de-texte" type="text" id="api-key" required></label>
+        
         <form id="form">
-            <select class="bouton" name="choix" id="choix" required>
+            <label for="choix"><select class="bouton" role="combobox" aria-label="Critère de sélection" name="choix" id="choix" required></label>
                 <option value=""> Critère de sélection </option>
                 <option value="Nom de l'anime"> Nom de l'anime </option>
                 <option value="ID"> ID </option>
                 <option value="Genre"> Genre </option>
                 <option value="Rang"> Rang </option>
             </select>
-            <input class="champs-de-texte" type="search" id="rechercher" placeholder="Rechercher..." />
+            <input role="search" aria-label="Barre de recherche" class="champs-de-texte" type="search" id="rechercher" placeholder="Rechercher..." />
             <input class="champs-de-texte" type="search" id="rechercher-genre" placeholder="Genre..." />
             <div class="genre" id="genre">
                 <div class="genre-element"><input type="checkbox" id="Award Winning"><label class="bouton-genre" for="Award Winning">Award Winning</label></div>
@@ -48,18 +49,18 @@
                 <div class="genre-element"><input type="checkbox" id="Erotica"><label class="bouton-genre" for="Erotica">Erotica</label></div>
                 <div class="genre-element"><input type="checkbox" id="Hentai"><label class="bouton-genre" for="Hentai">Hentai</label></div>
             </div>
-            <input class="bouton" type="submit" id="envoyer" value="Rechercher">
-            <input class="bouton" type="reset" id="effacer" value="Effacer">
+            <input role="button" aria-label="Rechercher" class="bouton" type="submit" id="envoyer" value="Rechercher">
+            <input role="button" aria-label="Effacer" class="bouton" type="reset" id="effacer" value="Effacer">
         </form>
         <div class="container" id="card-div">
 
         </div>
         <template id="template_anime_card">
             <div class="carte">
-                <h1 id="anime_title"></h1>
-                <img id="image_anime" src="" alt="image indisponible">
+                <h1 id="anime_title" class="anime"></h1>
+                <img id="image_anime" class="image" src="" alt="image indisponible">
                 <h2>Synopsis :</h2>
-                <p id="synopsis"></p>
+                <p id="synopsis" class="synopsis"></p>
                 <h2>Catégories :</h2>
                 <table id="catégories"></table>
                 <h2 id="classement_label">Classement :</h2>
@@ -73,7 +74,7 @@
     </div>
     </main>
     <footer id="footer">
-        <a href="https://github.com/Jaysoooooon/AnimeRequester" class="footer_elements"><img src="ressources/github.png"></a>
+        <a href="https://github.com/Jaysoooooon/AnimeRequester" class="footer_elements"><img id="github" src="ressources/github.png" alt="Logo Github"></a>
     </footer>
 </body>
 </html>
