@@ -12,10 +12,10 @@ function générez_résultat(nb_res){
             let clone = document.importNode(template.content, true);
             all.appendChild(clone);
             let synopsis=document.getElementById("synopsis")
-            synopsis.textContent="syn"+i
-            synopsis.id=synopsis.id+"_"+i
+            synopsis.textContent="Syn"+i
+            synopsis.id=synopsis.id+"_"+i  
             let anime_title=document.getElementById("anime_title");
-            anime_title.textContent="title"+i
+            anime_title.textContent="Title"+i
             anime_title.id=anime_title.id+"_"+i
             let image_anime=document.getElementById("image_anime");
             image_anime.id=image_anime.id+"_"+i;

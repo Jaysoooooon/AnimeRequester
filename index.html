@@ -9,31 +9,33 @@
 </head>
 <body>
     <header>
-        <input id="changement_mode"  type="button" value="◐">
-        <h1 id="titre">㊐ ◈ (★) Json's AnimeRequester (★) ◈ ㊑ </h1>
+        <input role="button" id="changement_mode" aria-label="mode sombre/ mode clair"  type="button" value="◐">
+        <h1 id="titre">Json's AnimeRequester</h1>
             </header>
     <div class="container" id="all">
 
         
         <div id="boutons">
             <main>
-            <select name="choix" id="choix">
+                <label for="choix">
+            <select role="combobox"  aria-label="Critère de sélection"   id="choix">
+                </label>
                 <option> Critère de sélection </option>
                 <option> Nom de l'anime </option>
                 <option> ID </option>
                 <option> Genre </option>
                 <option> Rang </option>
             </select>
-            <input type="search" id="rechercher" placeholder="Rechercher..." />
-            <input type="submit" id="envoyer" value="Rechercher">
-            <input type="reset" id="effacer" value="effacer">
+            <input role="search" aria-label="Barre de recherche"  type="search" id="rechercher" placeholder="Rechercher..." />
+            <input role="button" aria-label="Rechercher" type="submit" id="envoyer" value="Rechercher">
+            <input role="button" aria-label="Effacer" type="reset" id="effacer" value="Effacer">
         </div>
         <template id="template_anime_card">
             <div class="carte">
-                <h1 id="anime_title"></h1>
-                <img id="image_anime" src="" alt="image indisponible">
-                <h2>Synopsis :</h2>
-                <p id="synopsis"></p>
+                <h1 id="anime_title" class="anime"></h1>
+                <img id="image_anime" class="image" src="" alt="Image indisponible">
+                <h2 id="titre_synopsis">Synopsis :</h2>
+                <p id="synopsis" class="synopsis"></p>
                 <table id="catégories"></table>
                 <label id="classement"></label>
                 <label id="nb_episodes"></label>
@@ -42,7 +44,7 @@
     </div>
     </main>
     <footer id="footer">
-        <a href="https://github.com/Jaysoooooon/AnimeRequester" class="footer_elements"><img src="ressources/github.png"></a>
+        <a href="https://github.com/Jaysoooooon/AnimeRequester" class="footer_elements"><img id="github" src="ressources/github.png" alt="Logo Github"></a>
     </footer>
 </body>
 </html>
