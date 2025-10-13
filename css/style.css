@@ -123,13 +123,7 @@ header{
   margin: 20px;
 }
 
-option{
-  background-color: rgb(25, 180, 228) ;
-}
 
-option:hover{
-  background-color: rgb(18, 136, 172) ;
-}
 
 
 #changement_mode{
