@@ -52,11 +52,19 @@ let nb_res = 0;
 let genre=document.getElementById('genre')
 
 
+genre.style.display='none'
 /* gestion du choix du genre */
 genre.addEventListener('submit', (event) => {
     event.preventDefault();
 });
 
+rechercher_genre.addEventListener('focus', (event) =>{
+    genre.style.display='inline'
+})
+
+rechercher_genre.addEventListener('blur', (event) =>{
+    genre.style.display='none'
+})
 
 /* fonction */
 function selectionnerCritere(){
