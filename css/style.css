@@ -1,3 +1,5 @@
+
+
 .container{
   display: flex;
   flex-direction: column;
@@ -16,9 +18,26 @@
   margin: 2%;
   border-radius: 20px;
 }
+.anime{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+}
+.synopsis{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+#titre_synopsis{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.image{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+}
 
 footer#footer{
-  background-color: rgb(0, 0, 0);
+  border-top: solid;
+  border-image:linear-gradient(to right,rgb(25, 180, 228), rgb(0, 119, 255)) 10;
   width: 100%;
   display: relative;
   align-items: center;
@@ -43,7 +62,8 @@ header{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size:50px;
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #envoyer{
   border-radius: 20px;
@@ -51,13 +71,15 @@ header{
   font-size: 15px;
   margin-right: 1%;
   padding: 1%;
-  background-image: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255))
+  text-align: center;
+  background-image: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #envoyer:active{
   box-shadow: 2px 2px 5px #0127fc;
 }
 #envoyer:hover{
-  background-image: linear-gradient(rgb(11, 90, 114), rgb(14, 72, 138))
+  background-image: linear-gradient(rgb(11, 151, 194), rgb(1, 92, 196))
 }
 #effacer{
   border-radius: 20px;
@@ -65,38 +87,37 @@ header{
   font-size: 15px;
   margin-right: 1%;
   padding: 1%;
+  text-align: center;
   background-image: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #effacer:hover{
-  background-image: linear-gradient(rgb(11, 90, 114), rgb(14, 72, 138))
+  background-image: linear-gradient(rgb(11, 151, 194), rgb(1, 92, 196))
 }
 #effacer:active{
   box-shadow: 2px 2px 5px #0127fc;
 }
-#choix{
-  border-radius: 20px;
-  border-style: none;
-  font-size: 15px;
-  margin-right: 1%;
-  padding: 1%;
-  background: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
-}
 
 
+#rechercher{
 
-.champs-de-texte{
   padding: 1%;
   width: 20%;
   margin-right: 1%;
   border: 2px solid rgb(25, 180, 228);
   border-radius: 20px;
   font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#rechercher:active{
+  box-shadow: 2px 2px 5px #0127fc;
 }
 
 #form{
   width: 100%;
   height: 20%;
 }
+
 
 #api-label{
   margin: 20px;
@@ -110,6 +131,7 @@ option:hover{
   background-color: rgb(18, 136, 172) ;
 }
 
+
 #changement_mode{
   font-size: 20px;
   border-style: none ;
@@ -117,12 +139,38 @@ option:hover{
   width: 50px;
   height: 50px;
   background-image: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
-  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #changement_mode:hover{
+
   background-image: linear-gradient(rgb(11, 90, 114), rgb(14, 72, 138))
 }
 
 .bouton{
   cursor: pointer;
+}
+
+#changement_mode:active{
+  box-shadow: 2px 2px 5px #0127fc;
+}
+select {
+	background-image: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
+  padding: 1%;
+	border-radius: 20px;
+  border-style: none;
+  margin-right: 1%;
+  text-align: center;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+select:hover{
+  background-image: linear-gradient(rgb(11, 151, 194), rgb(1, 92, 196));
+}
+select:active{
+  box-shadow: 2px 2px 5px #0127fc;
+}
+#github{
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  border-radius: 20px;
 }
