@@ -50,29 +50,30 @@ let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
 let rechercher_genre = document.getElementById('rechercher-genre')
+let genre_div = document.getElementById('genre-div')
 let mode = document.getElementById('changement_mode')
 let estModeSombre = false;
-rechercher_genre.style.display='none'
+genre_div.style.display='none'
 let titre = document.getElementById("titre")
 let arriere_plan = document.body
 let choix = document.getElementById('choix')
 let critereChoisie
 let nb_res = 0;
-let genre=document.getElementById('genre')
+let genre_list=document.getElementById('genre')
 
 
-genre.style.display='none'
+genre_list.style.display='none'
 /* gestion du choix du genre */
-genre.addEventListener('submit', (event) => {
+genre_list.addEventListener('submit', (event) => {
     event.preventDefault();
 });
 
 rechercher_genre.addEventListener('focus', (event) =>{
-    genre.style.display='inline'
+    genre_list.style.display='inline'
 })
 
 rechercher_genre.addEventListener('blur', (event) =>{
-    genre.style.display='none'
+    genre_list.style.display='none'
 })
 
 /* fonction */
@@ -116,10 +117,10 @@ function isDarkMode (){
 choix.addEventListener("change", ()=>{
     critereChoisie =selectionnerCritere();
     if(critereChoisie!='genre'){
-        rechercher_genre.style.display='none'
-        rechercher.style.display='inline'
+        genre_div.style.display='none'
+        rechercher.style.display='inline-flex'
     } else {
-        rechercher_genre.style.display='inline'
+        genre_div.style.display='inline-flex'
         rechercher.style.display='none'
 
     }
