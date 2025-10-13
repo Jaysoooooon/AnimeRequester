@@ -1,5 +1,14 @@
 let key = '';
 
+let apiKey = document.getElementById('api-key');
+if (sessionStorage.getItem("autosave")) {
+    apiKey.value = sessionStorage.getItem("autosave");
+}
+
+apiKey.addEventListener("change", () => {
+    sessionStorage.setItem("autosave", apiKey.value);
+});
+
 function générez_résultat(nb_res){
     let div_card = document.getElementById("card-div")
     while(div_card.hasChildNodes()){
