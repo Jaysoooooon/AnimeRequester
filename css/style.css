@@ -132,21 +132,23 @@ option:hover{
   cursor: pointer;
 }
 
-.genre{
+.bouton-genre{
+  cursor: pointer;
+  width: 100%;
+}
+
+#genre{
   display:inline-block;
   max-width: 200px;
   max-height: 100px;
   overflow-y: auto;
   position: absolute;
   border-radius: 8px;
-  
+  background-color: rgb(25, 180, 228);
+
 }
 
-#genre-deroulant {
-  height: 100%;
-  
-  
-}
+
 
 .genre-element{
   display: flex;
@@ -161,4 +163,9 @@ option:hover{
   display: flex;
   background-color: rgb(18, 136, 172) ;
 
+}
+
+
+.inline{
+  display: inline;
 }
