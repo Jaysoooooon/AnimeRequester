@@ -53,20 +53,19 @@ let rechercher_genre = document.getElementById('rechercher-genre')
 let genre_div = document.getElementById('genre-div')
 let mode = document.getElementById('changement_mode')
 let estModeSombre = false;
-genre_div.style.display='none'
 let titre = document.getElementById("titre")
 let arriere_plan = document.body
 let choix = document.getElementById('choix')
 let critereChoisie
 let nb_res = 0;
-let genre_list=document.getElementById('genre')
+let genre_list=document.getElementById('genre-list')
 
 
-genre_list.style.display='none'
 /* gestion du choix du genre */
-genre_list.addEventListener('submit', (event) => {
-    event.preventDefault();
-});
+rechercher_genre.style.display='none'
+genre_list.style.display='none'
+
+
 
 rechercher_genre.addEventListener('focus', (event) =>{
     genre_list.style.display='inline'
@@ -117,10 +116,10 @@ function isDarkMode (){
 choix.addEventListener("change", ()=>{
     critereChoisie =selectionnerCritere();
     if(critereChoisie!='genre'){
-        genre_div.style.display='none'
+        rechercher_genre.style.display='none'
         rechercher.style.display='inline-flex'
     } else {
-        genre_div.style.display='inline-flex'
+        rechercher_genre.style.display='inline-flex'
         rechercher.style.display='none'
 
     }
