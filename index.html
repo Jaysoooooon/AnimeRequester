@@ -9,6 +9,48 @@
 </head>
 <body>
     <header>
+        <input class="bouton" id="changement_mode"  type="button" value="◐">
+        <h1 id="titre">㊐ ◈ (★) Json's AnimeRequester (★) ◈ ㊑ </h1>
+    </header>
+    <div class="container" id="all">        
+        <label id="api-label">Déposer votre clé d'API ici pour faire des recherches : <input class="champs-de-texte" type="text" id="api-key" required></label>
+        <form id="form">
+            <select class="bouton" name="choix" id="choix" required>
+                <option value=""> Critère de sélection </option>
+                <option value="Nom de l'anime"> Nom de l'anime </option>
+                <option value="ID"> ID </option>
+                <option value="Genre"> Genre </option>
+                <option value="Rang"> Rang </option>
+            </select>
+            <input class="champs-de-texte" type="search" id="rechercher" placeholder="Rechercher..." />
+            <input class="champs-de-texte" type="search" id="rechercher-genre" placeholder="Genre..." />
+            <div class="genre" id="genre">
+                <div class="genre-element"><input type="checkbox" id="Award Winning"><label class="bouton-genre" for="Award Winning">Award Winning</label></div>
+                <div class="genre-element"><input type="checkbox" id="Action"><label class="bouton-genre" for="Action">Action</label></div>
+                <div class="genre-element"><input type="checkbox" id="Suspense"><label class="bouton-genre" for="Suspense">Suspense</label></div>
+                <div class="genre-element"><input type="checkbox" id="Horror"><label class="bouton-genre" for="Horror">Horror</label></div>
+                <div class="genre-element"><input type="checkbox" id="Ecchi"><label class="bouton-genre" for="Ecchi">Ecchi</label></div>
+                <div class="genre-element"><input type="checkbox" id="Avant Garde"><label class="bouton-genre" for="Avant Garde">Avant Garde</label></div>
+                <div class="genre-element"><input type="checkbox" id="Sports"><label class="bouton-genre" for="Sports">Sports</label></div>
+                <div class="genre-element"><input type="checkbox" id="Supernatural"><label class="bouton-genre" for="Supernatural">Supernatural</label></div>
+                <div class="genre-element"><input type="checkbox" id="Fantasy"><label class="bouton-genre" for="Fantasy">Fantasy</label></div>
+                <div class="genre-element"><input type="checkbox" id="Gourmet"><label class="bouton-genre" for="Gourmet">Gourmet</label></div>
+                <div class="genre-element"><input type="checkbox" id="Boys Love"><label class="bouton-genre" for="Boys Love">Boys Love</label></div>
+                <div class="genre-element"><input type="checkbox" id="Drama"><label class="bouton-genre" for="Drama">Drama</label></div>
+                <div class="genre-element"><input type="checkbox" id="Comedy"><label class="bouton-genre" for="Comedy">Comedy</label></div>
+                <div class="genre-element"><input type="checkbox" id="Mystery"><label class="bouton-genre" for="Mystery">Mystery</label></div>
+                <div class="genre-element"><input type="checkbox" id="Girls Love"><label class="bouton-genre" for="Girls Love">Girls Love</label></div>
+                <div class="genre-element"><input type="checkbox" id="Slice of Life"><label class="bouton-genre" for="Slice of Life">Slice of Life</label></div>
+                <div class="genre-element"><input type="checkbox" id="Adventure"><label class="bouton-genre" for="Adventure">Adventure</label></div>
+                <div class="genre-element"><input type="checkbox" id="Romance"><label class="bouton-genre" for="Romance">Romance</label></div>
+                <div class="genre-element"><input type="checkbox" id="Sci-Fi"><label class="bouton-genre" for="Sci-Fi">Sci-Fi</label></div>
+                <div class="genre-element"><input type="checkbox" id="Erotica"><label class="bouton-genre" for="Erotica">Erotica</label></div>
+                <div class="genre-element"><input type="checkbox" id="Hentai"><label class="bouton-genre" for="Hentai">Hentai</label></div>
+            </div>
+            <input class="bouton" type="submit" id="envoyer" value="Rechercher">
+            <input class="bouton" type="reset" id="effacer" value="Effacer">
+        </form>
+        <div class="container" id="card-div">
 
         <input role="button" id="changement_mode" aria-label="mode sombre/ mode clair"  type="button" value="◐">
         <h1 id="titre">Json's AnimeRequester</h1>
@@ -43,7 +85,7 @@
                 <label id="classement"></label>
                 <h2 id="nb_episodes_label">Nombre d'épisodes :</h2>
                 <label id="nb_episodes"></label>
-                <h2>Titres alternatifs :</h6>
+                <h2>Titres alternatifs :</h2>
                 <label id="alias"></label>
             </div>
         </template>
