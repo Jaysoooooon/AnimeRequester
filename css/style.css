@@ -3,6 +3,11 @@ html {
   scrollbar-color: rgb(17, 96, 120) rgb(25, 180, 228);
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+}
+
 .container{
   display: flex;
   flex-direction: column;
@@ -46,7 +51,8 @@ footer#footer{
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 10em;
+  min-height: 8em;
+  bottom: 0;
 }
 
 .footer_elements{
@@ -216,4 +222,12 @@ select:active{
 
 .inline{
   display: inline;
+}
+
+.column{
+  flex-direction: column;
+}
+
+main{
+  min-height: 50vh;
 }
