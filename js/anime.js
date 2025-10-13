@@ -61,6 +61,7 @@ let nb_res = 0;
 let genre_list=document.getElementById('genre-list')
 
 
+
 /* gestion du choix du genre */
 rechercher_genre.style.display='none'
 genre_list.style.display='none'
