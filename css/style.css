@@ -85,9 +85,9 @@ header{
 #titre{
   text-align: center;
   background: linear-gradient(to right, rgb(25, 180, 228), rgb(0, 119, 255));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-clip:content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     font-size: 35px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
