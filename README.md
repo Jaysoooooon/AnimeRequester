@@ -2,7 +2,7 @@
 
 Bienvenue sur **Anime Requester App**, une application web simple et rapide pour rechercher des animés via une API externe.
 
-🔗 **Lien du site :** [https://ton-pseudo.github.io/nom-du-repo](https://ton-pseudo.github.io/nom-du-repo)
+🔗 **Lien du site :** [AnimeRequester](https://jaysoooooon.github.io/AnimeRequester/))
 
 ## Description
 
