@@ -1,6 +1,10 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: rgb(17, 96, 120) rgb(25, 180, 228);
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
 }
 
 .container{
@@ -9,7 +13,11 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
+  min-height: 100%;
   
+}
+main{
+  flex-grow: 1;
 }
 :root {
   color-scheme: light dark;
@@ -56,12 +64,16 @@ html {
 footer#footer{
   border-top: solid;
   border-image:linear-gradient(to right,rgb(25, 180, 228), rgb(0, 119, 255)) 10;
+  border-radius: 0px 0px 20px 20px;
+  background-color: black;
   width: 100%;
-  display: relative;
   align-items: center;
   justify-content: center;
   text-align: center;
   min-height: 10em;
+  flex-grow: 0;
+  flex-shrink: 0;
+ 
 }
 
 .footer_elements{
