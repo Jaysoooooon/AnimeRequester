@@ -61,6 +61,8 @@ let nb_res = 0;
 let genre_list=document.getElementById('genre-list')
 
 choix.value=""
+rechercher_genre.value=""
+rechercher.value=""
 
 
 /* gestion du choix du genre */
@@ -214,6 +216,16 @@ form.addEventListener('submit', (event) => {
     search();
 });
 
+rechercher_genre.addEventListener('input', (event) =>{
+    for (let genre_check of genre_list.children) {
+        const checkbox_genre = genre_check.querySelector('input[type="checkbox"]');
+        if(checkbox_genre.value.toLowerCase().includes(rechercher_genre.value.toLowerCase())){
+            genre_check.style.display='flex'
+        } else {
+            genre_check.style.display='none'
+        }
+    }
+})
 
 function getGenres(){
     let string = ""
