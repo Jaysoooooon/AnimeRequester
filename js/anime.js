@@ -77,8 +77,6 @@ rechercher_genre.addEventListener('blur', (event) =>{
 
 /* fonction */
 function selectionnerCritere(){
-    
-
     switch(choix.value){
         case "ID":
             return "id";
@@ -96,22 +94,17 @@ function selectionnerCritere(){
 
 function changerCouleurSombre(){
     document.documentElement.style.colorScheme = 'dark'
- 
 }
 
 function changerCouleurClaire(){
-   
     document.documentElement.style.colorScheme = 'light'
-    
 }
 
 function isDarkMode (){
-
 	return globalThis.matchMedia?.("(prefers-color-scheme:dark)").matches ?? false;
 }
 // Usage
- estModeSombre =isDarkMode();
-
+estModeSombre =isDarkMode();
 
 choix.addEventListener("change", ()=>{
     critereChoisie =selectionnerCritere();
@@ -123,7 +116,6 @@ choix.addEventListener("change", ()=>{
         rechercher.style.display='none'
 
     }
-     
 })
 
 mode.addEventListener('click', ()=>{
@@ -140,8 +132,6 @@ mode.addEventListener('click', ()=>{
         changerCouleurClaire()
     }
 })
-
-
 
 /* code pour effacer la recherche */
 
@@ -193,7 +183,7 @@ function search() {
     })
     .catch(error => {
         console.error('Il y a un problème avec l opération fetch', error);
-        alert("Une erreure est survenue, vérifier la clé !");
+        alert("Une erreure est survenue, vérifier la clé ! Ou alors l'ID ou le Rang ne convient pas !");
     });
 }
 
@@ -206,7 +196,6 @@ form.addEventListener('submit', (event) => {
 
 function jsonStep(data) {
     let i = 0;
-    
     let string_genre = "";
 
     if(choix.value == "ID" || choix.value == "Rang") {
@@ -216,10 +205,10 @@ function jsonStep(data) {
         document.getElementById("alias_" + i).textContent = data.alternativeTitles;
         document.getElementById("synopsis_" + i).textContent = data.synopsis;
         document.getElementById("image_anime_" + i).src = data.image;
-        if(element.genres.length>0){
-            string_genre+=element.genres[0]
-            for(let j = 1; j<element.genres.length; j++){
-                string_genre+=", "+element.genres[j]
+        if(data.genres.length>0){
+            string_genre+=data.genres[0]
+            for(let j = 1; j<data.genres.length; j++){
+                string_genre+=", "+data.genres[j]
             }
         }
         console.log(data.hasEpisode)
