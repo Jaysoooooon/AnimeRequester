@@ -50,30 +50,38 @@ let envoyer = document.getElementById('envoyer')
 let effacer = document.getElementById('effacer')
 let rechercher = document.getElementById('rechercher')
 let rechercher_genre = document.getElementById('rechercher-genre')
+let genre_div = document.getElementById('genre-div')
 let mode = document.getElementById('changement_mode')
 let estModeSombre = false;
-rechercher_genre.style.display='none'
 let titre = document.getElementById("titre")
 let arriere_plan = document.body
 let choix = document.getElementById('choix')
 let critereChoisie
 let nb_res = 0;
-let genre=document.getElementById('genre')
+let genre_list=document.getElementById('genre-list')
+
+choix.value=""
+rechercher_genre.value=""
+rechercher.value=""
 
 
-genre.style.display='none'
 /* gestion du choix du genre */
-genre.addEventListener('submit', (event) => {
-    event.preventDefault();
+rechercher_genre.style.display='none'
+genre_list.style.display='none'
+
+
+
+
+document.addEventListener('click', (e) => {
+  if (genre_div.contains(e.target)) {
+    genre_list.style.display = 'inline';
+  } else {
+    genre_list.style.display = 'none';
+  }
 });
 
-rechercher_genre.addEventListener('focus', (event) =>{
-    genre.style.display='inline'
-})
 
-rechercher_genre.addEventListener('blur', (event) =>{
-    genre.style.display='none'
-})
+
 
 /* fonction */
 function selectionnerCritere(){
@@ -110,9 +118,9 @@ choix.addEventListener("change", ()=>{
     critereChoisie =selectionnerCritere();
     if(critereChoisie!='genre'){
         rechercher_genre.style.display='none'
-        rechercher.style.display='inline'
+        rechercher.style.display='inline-flex'
     } else {
-        rechercher_genre.style.display='inline'
+        rechercher_genre.style.display='inline-flex'
         rechercher.style.display='none'
 
     }
@@ -161,7 +169,11 @@ function getChoice() {
 }
 
 function getSearchElement() {
-    return rechercher.value;
+    if(choix.value=='Genre'){
+        return getGenres()
+    } else {
+        return rechercher.value;
+    }
 }
 
 function search() {
@@ -193,6 +205,32 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     search();
 });
+
+rechercher_genre.addEventListener('input', (event) =>{
+    for (let genre_check of genre_list.children) {
+        const checkbox_genre = genre_check.querySelector('input[type="checkbox"]');
+        if(checkbox_genre.value.toLowerCase().includes(rechercher_genre.value.toLowerCase())){
+            genre_check.style.display='flex'
+        } else {
+            genre_check.style.display='none'
+        }
+    }
+})
+
+function getGenres(){
+    let string = ""
+    for (let genre_check of genre_list.children) {
+        const checkbox_genre = genre_check.querySelector('input[type="checkbox"]');
+        if(checkbox_genre.checked){
+            string=string+checkbox_genre.value+"%2C"
+        }
+    }
+    if(string.length>3){
+        string=string.slice(0, -3)
+    }
+    console.log(string)
+    return string;
+}
 
 function jsonStep(data) {
     let i = 0;

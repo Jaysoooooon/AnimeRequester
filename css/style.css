@@ -4,7 +4,12 @@ html {
 }
 
 main{
-  min-height: 1500px;
+  min-height: 50vh;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
 }
 
 .container{
@@ -27,6 +32,7 @@ main{
   margin: 2%;
   border-radius: 20px;
 }
+
 .anime{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
@@ -58,7 +64,6 @@ main{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10px;
 }
-
 footer#footer{
   bottom: 0px;
   border-top: solid;
@@ -69,7 +74,8 @@ footer#footer{
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 10em;
+  min-height: 8em;
+  bottom: 0;
 }
 
 .footer_elements{
@@ -82,6 +88,7 @@ header{
   border-image:linear-gradient(to right,rgb(25, 180, 228), rgb(0, 119, 255)) 10;
   
 }
+
 #titre{
   text-align: center;
   background: linear-gradient(to right, rgb(25, 180, 228), rgb(0, 119, 255));
@@ -125,16 +132,7 @@ header{
 }
 
 
-#rechercher{
 
-  padding: 1%;
-  width: 20%;
-  margin-right: 1%;
-  border: 2px solid rgb(25, 180, 228);
-  border-radius: 20px;
-  font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 #rechercher:active{
   box-shadow: 2px 2px 5px #0127fc;
 }
@@ -142,6 +140,7 @@ header{
 #form{
   width: 100%;
   height: 20%;
+  align-items: normal;
 }
 
 
@@ -167,6 +166,8 @@ header{
   background-image: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
 #changement_mode:hover{
 
   background-image: linear-gradient(rgb(11, 151, 194), rgb(1, 92, 196))
@@ -179,6 +180,7 @@ header{
 #changement_mode:active{
   box-shadow: 2px 2px 5px #0127fc;
 }
+
 select {
 	background-image: linear-gradient(rgb(25, 180, 228), rgb(0, 119, 255));
   padding: 1%;
@@ -195,21 +197,21 @@ select:hover{
 select:active{
   box-shadow: 2px 2px 5px #0127fc;
 }
+
 #github{
   border: solid;
   border-color: rgb(0, 0, 0);
   border-radius: 20px;
 
 }
+
+
 .bouton-genre{
   cursor: pointer;
   width: 100%;
 }
 
-#genre{
-  display:inline-block;
-  max-width: 200px;
-  max-height: 100px;
+#genre-list{
   overflow-y: auto;
   position: absolute;
   border-radius: 8px;
@@ -241,8 +243,25 @@ select:active{
   border: 2px solid rgb(25, 180, 228);
   border-radius: 20px;
   font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
 }
 
-.inline{
+#genre-div{
   display: inline;
+  position: relative;
+}
+
+
+
+#genre-list {
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background-color: rgb(25, 180, 228);
+  position: absolute;
+  width: 95%;
+  top: 180%;
+  left: 0%;
 }
