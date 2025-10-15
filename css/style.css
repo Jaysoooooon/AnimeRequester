@@ -25,10 +25,25 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
 }
-.synopsis{
+.texte1{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
+  text-align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
 }
+
+.titre{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.texte2{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  margin: auto;
+  padding: 0;
+}
+
 
 #titre_synopsis{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -126,8 +141,14 @@ header{
   margin: 20px;
 }
 
-
-
+.carte#classement_label{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+}
+.carte#classement{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
 
 #changement_mode{
   font-size: 20px;
@@ -140,7 +161,7 @@ header{
 }
 #changement_mode:hover{
 
-  background-image: linear-gradient(rgb(11, 90, 114), rgb(14, 72, 138))
+  background-image: linear-gradient(rgb(11, 151, 194), rgb(1, 92, 196))
 }
 
 .bouton{
