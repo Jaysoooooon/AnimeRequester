@@ -222,7 +222,7 @@ select:active{
   box-sizing: border-box;
 }
 
-#div-genre{
+#genre-div{
   display: inline;
   position: relative;
 }

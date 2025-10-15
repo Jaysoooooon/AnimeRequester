@@ -60,6 +60,7 @@ let critereChoisie
 let nb_res = 0;
 let genre_list=document.getElementById('genre-list')
 
+choix.value=""
 
 
 /* gestion du choix du genre */
@@ -68,13 +69,17 @@ genre_list.style.display='none'
 
 
 
-rechercher_genre.addEventListener('focus', (event) =>{
-    genre_list.style.display='inline'
-})
 
-rechercher_genre.addEventListener('blur', (event) =>{
-    genre_list.style.display='none'
-})
+document.addEventListener('click', (e) => {
+  if (genre_div.contains(e.target)) {
+    genre_list.style.display = 'inline';
+  } else {
+    genre_list.style.display = 'none';
+  }
+});
+
+
+
 
 /* fonction */
 function selectionnerCritere(){
