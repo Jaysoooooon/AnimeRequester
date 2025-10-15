@@ -177,7 +177,11 @@ function getChoice() {
 }
 
 function getSearchElement() {
-    return rechercher.value;
+    if(choix.value=='Genre'){
+        return getGenres()
+    } else {
+        return rechercher.value;
+    }
 }
 
 function search() {
@@ -209,6 +213,22 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     search();
 });
+
+
+function getGenres(){
+    let string = ""
+    for (let genre_check of genre_list.children) {
+        const checkbox_genre = genre_check.querySelector('input[type="checkbox"]');
+        if(checkbox_genre.checked){
+            string=string+checkbox_genre.value+"%2C"
+        }
+    }
+    if(string.length>3){
+        string=string.slice(0, -3)
+    }
+    console.log(string)
+    return string;
+}
 
 function jsonStep(data) {
     let i = 0;
